@@ -11,6 +11,12 @@ type ValidationPostInput struct {
 	Content string `json:"content" binding:"required"`
 }
 
+// type error message
+type ErrorMsg struct {
+	Field   string `json:"field`
+	Message string `json:"message"`
+}
+
 func FindPosts(c *gin.Context) {
 	// get data from database using models
 	var posts []models.Post
