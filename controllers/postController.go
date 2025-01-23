@@ -13,7 +13,7 @@ type ValidationPostInput struct {
 
 // type error message
 type ErrorMsg struct {
-	Field   string `json:"field`
+	Field   string `json:"field"`
 	Message string `json:"message"`
 }
 
