@@ -75,3 +75,18 @@ func StorePost(c *gin.Context) {
 		"data":    post,
 	})
 }
+
+// get posts by id
+func FindPostsById(c *gin.Context) {
+	var post models.Post
+	if err := models.DB.Where("id = ?", c.Param("id")).First(&post).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found"})
+		return
+	}
+
+	c.JSON(200, gin.H{
+		"success": true,
+		"message": "Detail Data Post By Id : " + c.Param("id"),
+		"data":    post,
+	})
+}
