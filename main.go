@@ -21,6 +21,7 @@ func main() {
 
 	router.GET("/api/posts", controllers.FindPosts)
 	router.POST("/api/posts", controllers.StorePost)
+	router.GET("/api/posts/:id", controllers.FindPostsById)
 
 	router.Run(":3000")
 }
