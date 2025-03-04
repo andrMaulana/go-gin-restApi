@@ -20,6 +20,7 @@ func main() {
 	})
 
 	router.GET("/api/posts", controllers.FindPosts)
+	router.POST("/api/posts", controllers.StorePost)
 
 	router.Run(":3000")
 }
